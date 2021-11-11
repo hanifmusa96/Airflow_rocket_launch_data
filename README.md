@@ -27,13 +27,23 @@
 ```
 1. Setup the environment  (conda/virtualenv/pyenv)
 2. pip install apache-airflow
-3. airflow db init
-4. airflow users create --username admin --password admin --firstname Anonymous --lastname Admin --role Admin --email musa.hanif@gmail.com
-5. cp download_rocket_launches.py~/airflow/dags/
-6. airflow webserver
-7. aiflow scheduler
+3. export AIRFLOW_HOME= <insert path you to initalize the airflow>                              #if AIRFLOW_HOME is unset, ~/airlflow/ will be created
+4. airflow db init
+5. airflow users create --username admin --password admin --firstname Anonymous --lastname Admin --role Admin --email musa.hanif@gmail.com
+6. cp download_rocket_launches.py <path to the /airflow/dags>
+7. airflow webserver
+8. aiflow scheduler
 
 ```
+
+** If failed to run ```airflow webserver``` or ```airflow scheduler```  or warning message like ```WARNING - Failed to log action with (sqlite3.OperationalError) no such table:```.
+try to access ```airflow.cfg``` file. Make sure that variables below has been set to: 
+
+unit_test_mode = False
+
+load_examples = False
+
+load_default_connections = False **
 
 ## 2.2 Running Airflow in Docker containers
 

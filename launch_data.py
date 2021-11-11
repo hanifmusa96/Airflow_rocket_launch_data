@@ -1,7 +1,7 @@
 import json
 import pathlib
 
-import library
+import airflow
 import requests
 import requests.exceptions as requests_exceptions
 from airflow import DAG
